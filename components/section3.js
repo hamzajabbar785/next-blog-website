@@ -2,12 +2,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import Image from "next/image";
 import Author from "./_child/author";
-import Fetcher from "../lib/Fetcher";
+import fetcher from "../lib/fetcher";
 import Spinner from "./_child/spinner";
 import Error from "./_child/error";
 
 export default function section3() {
-  const { data, isLoading, isError } = Fetcher("api/popular");
+  const { data, isLoading, isError } = fetcher("api/popular");
 
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
